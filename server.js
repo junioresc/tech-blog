@@ -8,9 +8,12 @@ const SequelizeStore = require(`connect-session-sequelize`)(session.Store);
 
 const sess = {
     secret: `PC Master Race`,
-    cookie: {},
+    cookie: {
+        maxAge: 1000 * 60 * 20
+    },
     resave: false,
     saveUninitialized: true,
+    rolling: true,
     store: new SequelizeStore({
         db: sequelize
     })

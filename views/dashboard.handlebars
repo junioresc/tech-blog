@@ -8,23 +8,23 @@
         </div>
         <div>
             <label for="post-description">Description:</label>
-            <input id="post-description" name="post-description" />
+            <textarea id="post-description" name="post-description"></textarea>
         </div>
         <button type="submit" class="btn">Create Post</button>
     </form>
 </section>
-
+<br>
 {{#if loggedIn}}
 <section>
     <h2>Your Posts</h2>
-    <ol>
+    <ul class="your-posts">
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
             <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
         </li>
         {{/each}}
-    </ol>
+    </ul>
 </section>
 {{/if}}
 
